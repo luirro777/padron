@@ -1,0 +1,18 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: antiquewhite;
+}
+nav a {
+    color: aqua;
+}
+nav a:hover {
+    color: azure;
+}
+
+a.ubic {
+    font-size: 40px;
+}
+
+a.volver {
+    font-size: 30px;
+}

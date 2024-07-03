@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<body>
+    <div class="container text-center">
+        <img src="{% static 'img/logo.png' %} " alt="Logo " class="mx-auto d-block">
+        <br><br><br>
+
+        <h1>Consulta tu lugar de votación</h1>
+
+        <form method="POST">{% csrf_token %}
+		    <div class="form-group justify-content-center">
+	    	    DNI (sin puntos) {{form.dni}}
+		    </div>
+		    <div class="w-full flex mt-3 justify-content-center">
+        	    {{ form.captcha }}
+    	    </div>
+            <button type="submit">Consultar</button>	
+        </form>
+    </div>
+</body>
+
+{% endblock content %}
+
+
+
+</html>

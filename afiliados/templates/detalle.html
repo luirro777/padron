@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<body>
+    <div class="container text-center">
+        <img src="{% static 'img/logo.png' %} " alt="Logo " class="mx-auto d-block">
+<br>
+        {% if detalle %}
+            {% for pe in detalle %}
+                <h1>{{ pe.apellidos }}, {{ pe.nombres}}</h1>
+                <h2>Vota en:</h2>                
+                <h2> <strong>Mesa:</strong>  {{ pe.mesa.numero }}</h2>
+                <h2><strong>Lugar:</strong> {{ pe.mesa.denominacion }}</h2>
+                <h2><strong>Dirección:</strong> {{ pe.mesa.direccion }}</h2>
+                <h2><strong>Localidad:</strong> {{ pe.mesa.localidad }}</h2>
+                
+                {% if pe.mesa.ubicacion_geografica %}
+                    <h2><strong>Ubicación Geográfica:</strong></h2>
+                    <a class="ubic" href="{{ pe.mesa.ubicacion_geografica }}" target="_blank">
+                        Ver en Google Maps
+                    </a>
+                {% endif %}
+            {% endfor %} 
+        {% else %}
+            <h1>No se encuentra el DNI en nuestra base.</h1>
+        {% endif %}
+        <br><br>
+        <a class="volver" href="{% url 'afiliados_app:principal' %}">&lt;&lt;Volver</a>
+        
+    </div>
+</body>
+
+{% endblock content %}
+
+
+
+
+</html>

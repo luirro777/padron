@@ -1,0 +1,29 @@
+
+
+
+
+<h2>Mesa numero {{numero}}</h2>
+<p>{{cant}} Afiliados</p>
+<table border="0.5" style="text-align:center;margin: 0 auto;">
+    <thead>
+        <tr>
+            <th>DNI</th>
+            <th>Apellido</th>
+            <th>Nombre</th>
+            <th>Organización</th>
+            <th>Voto</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dato in listado %}
+        <tr>
+            <td>{{ dato.dni }}</td>
+            <td>{{ dato.apellidos }}</td>
+            <td>{{ dato.nombres }}</td>
+            <td>{{ dato.organizacion }}</td>
+            <td> </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
